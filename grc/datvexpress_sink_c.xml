@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<block>
+    <name>DATV-Express</name>
+    <key>datvexpress_sink_c</key>
+    <category>Sinks</category>
+    <throttle>1</throttle>
+    <import>import datvexpress</import>
+    <make>datvexpress.sink_c()
+self.$(id).set_freq($freq)
+self.$(id).set_sample_rate($rate)
+self.$(id).set_level($level)
+    </make>
+
+    <!-- Callbacks -->
+    <callback>set_freq($freq)</callback>
+    <callback>set_level($level)</callback>
+    <callback>set_sample_rate($rate)</callback>
+
+    <!-- parameters -->
+    <param>
+        <name>Sample rate</name>
+        <key>rate</key>
+        <value>2048000</value>
+        <type>real</type>
+    </param>
+    <param>
+        <name>RF frequency</name>
+        <key>freq</key>
+        <value>1250000</value>
+        <type>real</type>
+    </param>
+    <param>
+        <name>Output level</name>
+        <key>level</key>
+        <value>20</value>
+        <type>int</type>
+    </param>
+
+    <sink>
+        <name>in</name>
+        <type>complex</type>
+    </sink>
+</block>

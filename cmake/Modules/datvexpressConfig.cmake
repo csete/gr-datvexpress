@@ -1,0 +1,30 @@
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(PC_DATVEXPRESS datvexpress)
+
+FIND_PATH(
+    DATVEXPRESS_INCLUDE_DIRS
+    NAMES datvexpress/api.h
+    HINTS $ENV{DATVEXPRESS_DIR}/include
+        ${PC_DATVEXPRESS_INCLUDEDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+          /usr/local/include
+          /usr/include
+)
+
+FIND_LIBRARY(
+    DATVEXPRESS_LIBRARIES
+    NAMES gnuradio-datvexpress
+    HINTS $ENV{DATVEXPRESS_DIR}/lib
+        ${PC_DATVEXPRESS_LIBDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+          ${CMAKE_INSTALL_PREFIX}/lib64
+          /usr/local/lib
+          /usr/local/lib64
+          /usr/lib
+          /usr/lib64
+)
+
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(DATVEXPRESS DEFAULT_MSG DATVEXPRESS_LIBRARIES DATVEXPRESS_INCLUDE_DIRS)
+MARK_AS_ADVANCED(DATVEXPRESS_LIBRARIES DATVEXPRESS_INCLUDE_DIRS)
+
