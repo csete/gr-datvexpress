@@ -33,8 +33,9 @@ in this package.
 ### Terms and conditions
 
 The gr-datvexpress block was written by Alexandru Csete OZ9AEC and is licensed
-under the GNU General Public license v# or later (same license as GNU Radio).
+under the GNU General Public license version 3 or later (same license as GNU
+Radio).
 
 The library includes code from the official DATV-Express software. This code
-is located in lib/hw/ and was written by Charles Brain G4GUO. It is licensed
-under the  Simplified BSD License.
+is located in lib/hw/ and was written by Charles Brain G4GUO. They are licensed
+under the Simplified BSD License.
