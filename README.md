@@ -1,9 +1,9 @@
-# GNU Radio sink block for the DATV-Express hardware
+## GNU Radio sink block for the DATV-Express hardware
 
 The block requires GNU Radio 3.7.2 or later and can be used in C++, Python
 and GRC applications.
 
-## Installation
+### Installation
 
     git clone https://github.com/csete/gr-datvexpress.git
     cd gr-datvexpress
@@ -16,7 +16,7 @@ and GRC applications.
 Keep the build directory around; you may need it if you want to uninstall
 later.
 
-## Usage
+### Usage
 
 You can test the DATV-Express sink block in the gnuradio-companion. The block
 is located under Sinks. There is a simple tone generator example in
@@ -30,7 +30,7 @@ them installed elsewhere.
 Feel free to submit other examples or applications if you want them included
 in this package.
 
-## Terms and conditions
+### Terms and conditions
 
 The gr-datvexpress block was written by Alexandru Csete OZ9AEC and is licensed
 under the GNU General Public license v# or later (same license as GNU Radio).
