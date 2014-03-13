@@ -1039,7 +1039,11 @@ int express_write_16_bit_samples( scmplx *s, int len )
 {
     for( int i = 0; i < len; i++ )
     {
-       s[i].re = s[i].re | 0x0001;// Mark I channel, LSB is always '1'
+        // Occasionally libusb seems to add an extra byte to the output stream
+        // and by marking the LSB to show which is which channel the FPGA can
+        // re-sync.
+        s[i].re = s[i].re | 0x0001; // Mark I channel, LSB is always '1'
+        s[i].im = s[i].im & 0xFFFE;
     }
     return express_send_buffer((unsigned char *)s, len*sizeof(scmplx));
 }
