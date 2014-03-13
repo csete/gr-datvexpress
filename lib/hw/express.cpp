@@ -713,22 +713,19 @@ void express_set_interp_and_filter( int interp, int filter )
     express_i2c_bulk_transfer( EP1OUT, msg, 3 );
     express_handle_events( 1 );
 }
+
 //
 // Send calibration information to the FPGA
 //
-/*
-void express_load_calibration( void )
+void express_load_calibration(short i_cal, short q_cal)
 {
     short val;
-    sys_config info;
     uchar msg[3];
 
     if( m_express_status != EXP_OK ) return;
 
-    dvb_config_get( &info );
-
     // First do the i channel offset
-    val = 0x8000 + info.i_chan_dc_offset*4;// bits 1:0 not used
+    val = 0x8000 + i_cal*4; // bits 1:0 not used
     // Send it
     msg[0]  = FPGA_ADD | I2C_WR;
     // MSB
@@ -743,7 +740,7 @@ void express_load_calibration( void )
     express_i2c_bulk_transfer( EP1OUT, msg, 3 );
 
     // Now the q channel offset
-    val = 0x8000 + info.q_chan_dc_offset*4;// bits 1:0 not used
+    val = 0x8000 + q_cal*4; // bits 1:0 not used
     // Send it
     msg[0]  = FPGA_ADD | I2C_WR;
     // MSB
@@ -760,7 +757,7 @@ void express_load_calibration( void )
     express_handle_events( 4 );
 
 }
-*/
+
 void express_set_config_byte( void )
 {
     unsigned char val;

@@ -107,7 +107,7 @@ void express_read_ad7992_chans(void);
 // Start the FX2 code running
 void express_run(void);
 // Load calibration values
-void express_load_calibration( void );
+void express_load_calibration(short i_cal, short q_cal);
 // Number of outstanding samples left to send on the hardware
 double express_outstanding_queue_size(void);
 // Can we queue another buffer

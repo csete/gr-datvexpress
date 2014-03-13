@@ -165,6 +165,11 @@ namespace gr {
         {
             return m_rate;
         }
+
+        void sink_c_impl::set_iq_cal(short ical, short qcal)
+        {
+            express_load_calibration(ical, qcal);
+        }
         
 
     } // namespace datvexpress

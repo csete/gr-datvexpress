@@ -9,12 +9,14 @@
 self.$(id).set_freq($freq)
 self.$(id).set_sample_rate($rate)
 self.$(id).set_level($level)
+self.$(id).set_iq_cal($ical,$qcal)
     </make>
 
     <!-- Callbacks -->
     <callback>set_freq($freq)</callback>
     <callback>set_level($level)</callback>
     <callback>set_sample_rate($rate)</callback>
+    <callback>set_iq_cal($ical,$qcal)</callback>
 
     <!-- parameters -->
     <param>
@@ -33,6 +35,18 @@ self.$(id).set_level($level)
         <name>Output level</name>
         <key>level</key>
         <value>20</value>
+        <type>int</type>
+    </param>
+    <param>
+        <name>I cal</name>
+        <key>ical</key>
+        <value>0</value>
+        <type>int</type>
+    </param>
+    <param>
+        <name>Q cal</name>
+        <key>qcal</key>
+        <value>0</value>
         <type>int</type>
     </param>
 

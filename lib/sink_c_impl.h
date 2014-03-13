@@ -34,6 +34,7 @@ namespace gr {
             int  get_level(void) const;
             void set_sample_rate(double rate);
             double get_sample_rate(void) const;
+            void set_iq_cal(short ical, short qcal);
  
         private:
             scmplx output_buffer[BUFLEN];  // FIXME: Can be smaller?

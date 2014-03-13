@@ -73,10 +73,13 @@ namespace gr {
              */
             virtual void set_sample_rate(double rate) = 0;
 
-            /*! \brief get sample rate.
+            /*! \brief Get sample rate.
              *  \returns The current sample rate in samples / second.
              */
             virtual double get_sample_rate(void) const = 0;
+
+            /*! \brief Set I/Q calibration. */
+            virtual void set_iq_cal(short ical, short qcal) = 0;
         };
 
     }
